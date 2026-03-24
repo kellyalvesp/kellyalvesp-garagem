@@ -7,7 +7,7 @@ from core.models.modelo import Modelo
 
 class Veiculo(models.Model):
     ano = models.IntegerField(null=True, blank=True)
-    preco = models.DecimalField(max_digits=7, decimal_places=2, blank=True, null=True)
+    preco = models.DecimalField(max_digits=9, decimal_places=2, blank=True, null=True)
     modelo = models.ForeignKey(Modelo, on_delete=models.PROTECT, related_name='veiculos', null=True, blank=True)
     cor = models.ForeignKey(Cor, on_delete=models.PROTECT, related_name='veiculos', null=True, blank=True)
     acessorios = models.ManyToManyField(Acessorio, related_name='veiculos')
